@@ -6,7 +6,12 @@
 
     `kubectl apply -f deployment-1.yaml`
 
-- Create a DB on Mongo Compass and Add a document. 
+- Forward port
+
+    `kubectl port-forward service/mongo-svc 32000:27017`
+
+- Create a DB on Mongo Compass at localhost:32000 and Add a document. 
+
 - Exec into the MongoDB Container
 
     ```
