@@ -114,6 +114,9 @@
     // Create the certificate
     openssl x509 -req -CA ~/.minikube/ca.crt -CAkey ~/.minikube/ca.key -CAcreateserial -days 730 -in keerthi.csr -out keerthi.crt
 
+    // Set credentials
+    kubectl config set-credentials keerthi --client-certificate=keerthi.crt --client-key=keerthi.key
+
     // Check the config to view new user added
     nano ~/.kube/config
 

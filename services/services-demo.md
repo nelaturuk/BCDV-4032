@@ -1,5 +1,16 @@
 # Services Demo 
 
+## Inaccessible service 
+
+```
+kubectl run nginx --image=nginx --port=80 --labels app=myapp
+
+kubectl get pods -o wide 
+
+// Try accessing the service on mentioned IP and port. 
+
+```
+
 ## Cluster IP Service Demo
 
 - Create Cluster IP Deployment object
@@ -38,6 +49,14 @@
     `kubectl port-forward service/nginx-service 8083:8090`
     
 - To check load balancing add the following code by entering into one of the pods
+    ```
+    i=0
+    while [ $i -lt 20 ]
+    do
+    curl nginx-service:8090;
+    i=$((i+1));
+    done
+    ```
     ![load generator](image-2.png)
 
 - Start watching the two replics using logs command
