@@ -1,5 +1,16 @@
 # Services Demo 
 
+## Inaccessible service 
+
+```
+kubectl run nginx --image=nginx --port=80 --labels app=myapp
+
+kubectl get pods -o wide 
+
+// Try accessing the service on mentioned IP and port. 
+
+```
+
 ## Cluster IP Service Demo
 
 - Create Cluster IP Deployment object
