@@ -6,6 +6,10 @@
 
     `kubectl apply -f deployment-1.yaml`
 
+- Deploy a mongodb svc object
+
+    `kubectl apply -f service-1.yaml`
+
 - Forward port
 
     `kubectl port-forward service/mongo-svc 32000:27017`
