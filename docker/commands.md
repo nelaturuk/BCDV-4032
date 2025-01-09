@@ -77,7 +77,7 @@ docker network ls
 
 docker network inspect <nid>
 
-docker network create --driver=bridge --subnet=182.1.0.1/16 isolatedNetwork
+docker network create --driver=bridge --subnet=182.1.0.0/16 isolatedNetwork
 
 docker network rm <nid>
 
@@ -96,4 +96,45 @@ docker exec -it <cid> bash
 ping test1
 
 
+```
+
+# Docker Volumes
+
+```
+cd /var/lib/docker/volumes
+
+docker volume create data_volume
+
+sudo ls -lrt
+
+docker run -itd -v data_volume:/www ubuntu
+
+docker ps
+
+docker exec -it <cid> bash
+
+ls
+
+cd www
+
+echo "Blash balsh" > test.txt
+
+ls
+
+exit
+
+cd data_volume
+
+cd _data
+
+ls
+
+docker ps
+docker stop eb
+docker rm eb
+
+ls
+
+
+docker run -itd -v data_volume:/www ubuntu
 ```
