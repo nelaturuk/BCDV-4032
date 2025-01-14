@@ -137,4 +137,24 @@ ls
 
 
 docker run -itd -v data_volume:/www ubuntu
+
+docker run -itd -v /home/rhyme/data:/www ubuntu
+
+docker exec -it <cid> bash
+
+ls
+
+cd www
+
+echo "Testdata" > test.txt
+
+exit
+
+docker volume ls 
+
+docker run -itd --mount type=bind, source=/home/rhyme/data, target=/www ubuntu
+
+docker exec -it <cid> bash
+
+docker volume rm data_volume
 ```
