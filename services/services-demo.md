@@ -50,14 +50,11 @@ kubectl get pods -o wide
     
 - To check load balancing add the following code by entering into one of the pods
     ```
-    i=0
-    while [ $i -lt 20 ]
-    do
-    curl nginx-service:8090;
-    i=$((i+1));
-    done
-    ```
-    ![load generator](image-2.png)
+    kubectl run test-pod --rm -it --image=busybox -- /bin/sh
+
+    From test pod: while true; do curl <ClusterIP>:80; sleep 1; done
+
+
 
 - Start watching the two replics using logs command
 
