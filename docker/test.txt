@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hello welcome!
+=======
+Hello welcome to my imahe.
+>>>>>>> 8f5a9cd6c086628c661582ed8a10e4cf5f4e6cf0
