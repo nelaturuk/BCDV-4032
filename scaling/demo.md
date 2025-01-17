@@ -41,7 +41,5 @@ kubectl top pod metrics-server-<name> --containers --namespace kube-system
 // Resources allocated to node
 kubectl describe node minikube
 
-
-
-
 ```
+HPA Demo: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
